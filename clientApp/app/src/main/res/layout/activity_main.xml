@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/homepage_background_style"
+    tools:context=".MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_page_toolbarstyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_banner">
+
+                </androidx.appcompat.widget.Toolbar>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline12"
+                    android:layout_width="40dp"
+                    android:layout_height="10dp"
+                    android:orientation="horizontal" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="My Dashboard"
+                    android:textColor="@color/white"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="hello it's user name"
+                    android:textSize="22dp"
+                    android:gravity="center"
+                    android:id="@+id/display_username"
+                    android:textColor="@color/colorAccent"/>
+
+                <GridLayout
+                    android:layout_width="380dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dp"
+                    android:alignmentMode="alignMargins"
+
+                    android:columnCount="2"
+                    android:columnOrderPreserved="false"
+                    android:rowCount="4">
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/background_banner"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="5dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/cardview_background"
+                                    android:gravity="center"
+                                    android:onClick="profile_click"
+                                    android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
+                                            android:layout_marginTop="18dp"
+                                            android:src="@drawable/woman" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="20dp"
+                                            android:text="Profile"
+                                            android:textColor="@color/white"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:layout_margin="10dp"
+                            app:cardBackgroundColor="#FAE0C9"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="5dp">
+
+                                <LinearLayout
+                                    android:id="@+id/wallet"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/cardview_background"
+                                    android:clickable="true"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
+                                            android:layout_marginTop="18dp"
+                                            android:src="@drawable/mwallet" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="20dp"
+                                            android:text="Wallet"
+                                            android:textColor="@color/white"
+                                            android:textSize="18sp"
+                                            android:textStyle="bold" />
+
+                                </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:layout_margin="10dp"
+                            app:cardBackgroundColor="#B1ECF1"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="5dp">
+
+                                <LinearLayout
+                                    android:id="@+id/transaction"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/cardview_background"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
+                                            android:layout_marginTop="18dp"
+                                            android:src="@drawable/transaction" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="20dp"
+                                            android:fontFamily="@font/googlesans_bold"
+                                            android:text="Transactions"
+                                            android:textColor="@color/white"
+                                            android:textSize="18sp" />
+
+                                </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="170dp"
+                            android:layout_height="170dp"
+                            android:layout_margin="10dp"
+                            app:cardBackgroundColor="#FAE0C9"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="5dp">
+
+                                <LinearLayout
+                                    android:id="@+id/addVehicle"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/cardview_background"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                        <ImageView
+                                            android:layout_width="45dp"
+                                            android:layout_height="45dp"
+                                            android:layout_marginTop="18dp"
+                                            android:src="@drawable/bike" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="20dp"
+                                            android:fontFamily="@font/googlesans_bold"
+                                            android:text="Add Vehicle"
+                                            android:textColor="@color/white"
+                                            android:textSize="18sp" />
+
+                                </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                </GridLayout>
+
+
+        </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

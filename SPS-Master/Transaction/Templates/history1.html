@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 
+            Transaction History
+        </title>
+    </head>
+
+    <body>
+        <h1>Transaction History</h1>
+    
+        <table>
+            <tr>
+                <th>User Id</th>
+                <th>Amount</th>
+                <th>Date Time</th>
+                <th>Vehicle No</th>
+            </tr>
+            {% for x in transactions %}
+                <tr>
+                    <td>{{x.userId}}</td>
+                    <td>{{x.amount}}</td>
+                    <td>{{x.dateTime}}</td>
+                    <td>{{x.vehiclePlateNo}}</td>
+                </tr>
+            {% endfor%}
+        </table>
+        
+    </body>
+</html>

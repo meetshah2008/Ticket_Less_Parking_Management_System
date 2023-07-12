@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ClientApp</string>
+
+    <string-array name="Category">
+        <item>Bike</item>
+        <item>Car</item>
+    </string-array>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--    -->
+    <!--    <item name="savingT" type="id">savingTextView</item>-->
+    <!--    <item name="amountT" type="id">amountTextView</item>-->
+    <!--    <item name="backT" type="id">backTextView</item>-->
+    <!--    <item name="currencyT" type="id">currencyTextView</item>-->
+</resources>

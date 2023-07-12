@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Photo Capture</title>
+</head>
+<body>
+	<form method = "post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Upload</button>
+	</form>
+
+    {% if saveAttempted %}
+		{% if anprSuccesssful %}
+			<p>Vehicle Plate: {{plateNum}}</p>
+			{% if vehicleRegistered %}
+				{% if direction %}
+					<p>Entry request status:</p>
+					{% if saved %}
+						<p>Parking entry recorded successfully.</p>
+					{% else %}
+						<p>Vehicle already recorded as parked.</p>
+					{% endif %}
+				{% else %}
+					<p>Payment request status:</p>
+					{% if saved %}
+						<p>Successsful</p>
+						<p>Fee: {{fee}}</p>
+						<p>Remaining balance: {{balance}}</p>
+					{% else %}
+						<p>Unsuccessful</p>
+						<p>Reason: Insufficient balance</p>
+						<p>Fee: {{fee}}</p>
+						<p>Current balance: {{balance}}</p>
+					{% endif %}
+				{% endif %}
+			{% else %}
+				<p>Vehicle not registered.</p>
+				<p>Please add vehicle in your vehicle list and try again.</p>
+			{% endif%}
+		{% else %}
+			<p>Can not fetch the vehicle registration number from the photo.</p>
+			<p>Please clean the camera lens & number plate and try again.</p>
+		{% endif %}
+    {% endif %}
+
+</body>
+</html>

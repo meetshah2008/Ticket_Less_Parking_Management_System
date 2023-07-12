@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 
+            Search Vehicle
+        </title>
+    </head>
+
+    <body>
+        <h1>Search for a vehicle</h1>
+        <div class="col-md-6" style="margin: 0 auto;"></div>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-primary" style="margin: 0 auto; display: block;">Search</button>
+        </form>
+        {% if search %}               
+            <h2>Vehicle No : {{search_title}}</h2>
+            <h2>User Name : {{username}}</h2>
+            <h2>User Wallet Balance : {{wallet_balance}}</h2>
+            {% for v in vehicle%}
+                <h2>Entry Time : {{v.inTime}}</h2>
+            {% endfor%}
+        {% else %}
+            <h2>Vehicle not found! Please enter a valid vehicle plate number</h2>
+        {% endif %}
+
+    </body>
+</html>

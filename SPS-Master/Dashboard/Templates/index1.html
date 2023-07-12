@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 
+            Dashboard
+        </title>
+    </head>
+
+    <body>
+        <h1>Dashboard</h1>
+        <div>
+            <h2>Parking Spot Occupied</h2>
+            <h2>{{spots}}/{{total}}</h2>
+        </div>
+        <h2>Parking History</h2>
+        <table>
+            <tr>
+                <th>Vehicle No</th>
+                <th>In Time</th>
+                <th>Out Time</th>
+            </tr>
+            {% for x in vehicles %}
+                <tr>
+                    <td>{{x.vehiclePlateNo}}</td>
+                    <td>{{x.inTime}}</td>
+                    <td>{{x.outTime}}</td>
+                </tr>
+            {% endfor%}
+        </table>
+        
+    </body>
+</html>
